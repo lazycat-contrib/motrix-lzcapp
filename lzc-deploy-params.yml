@@ -1,0 +1,13 @@
+params:
+  - id: download_dir
+    type: string
+    name: "Download Directory"
+    description: "Name of the download folder for this instance"
+    default_value: "Motrix Downloads"
+    optional: false
+
+locales:
+  zh:
+    download_dir:
+      name: "下载目录"
+      description: "当前实例的下载文件夹名称"

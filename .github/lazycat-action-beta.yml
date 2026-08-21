@@ -22,20 +22,16 @@ images:
     target: service
     service: server
     source: motrixapp/motrix-server
-    channel: stable
-    tag_regex: '^v?\d+\.\d+\.\d+$'
+    channel: beta
+    tag_regex: '^v?\d+\.\d+\.\d+(-.*)?$'
     delivery:
       mode: lazycat
 
 stores:
   official:
-    enabled: true
-    skip_if_version_exists: true
-    changelog_locales: [zh, en]
-    retry:
-      enabled: false
+    enabled: false
   private:
     enabled: true
     skip_if_version_exists: true
     name: Motrix
-    summary: Stable releases published from GitHub Actions
+    summary: Beta releases published from GitHub Actions

@@ -7,11 +7,11 @@ application:
       backend: http://server:8080/
   public_path:
     - /
-
 services:
   server:
     # motrixapp/motrix-server:2.0.0-beta.19
-    image: docker.1ms.run/motrixapp/motrix-server:2.0.0-beta.19
+    # upstream: motrixapp/motrix-server:2.0.0-beta.19
+    image: registry.lazycat.cloud/czyt/motrixapp/motrix-server:0a3f711627540366
     environment:
       - MOTRIX_DATA_DIR=/data
       - MOTRIX_TEMP_DIR=/data/tmp
@@ -24,6 +24,5 @@ services:
     binds:
       - /lzcapp/var/data:/data
       - /lzcapp/run/mnt/home/{{.U.download_dir}}:/downloads
-
 ext_config:
   enable_document_access: true

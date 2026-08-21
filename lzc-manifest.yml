@@ -21,6 +21,7 @@ services:
       - MOTRIX_ALLOWED_SAVE_DIRS=/downloads
       - MOTRIX_MDXP_HOST=0.0.0.0
       - MOTRIX_MDXP_PORT=16801
+      - MOTRIX_OPERATOR_TOKEN={{.U.operator_token}}
       - MOTRIX_PUBLIC_URL=https://{{.S.AppDomain}}
     binds:
       - /lzcapp/var/data:/data

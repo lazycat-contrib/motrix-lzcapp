@@ -7,6 +7,26 @@ application:
       backend: http://server:8080/
   public_path:
     - /
+  injects:
+    - id: motrix-auto-login
+      when:
+        - /
+      do: |
+        (async () => {
+          try {
+            if (window.__mtx_al__) return;
+            window.__mtx_al__ = true;
+            const r = await fetch('/rpc/auth/status', { credentials: 'include' });
+            const s = await r.json();
+            if (s && s.authed) return;
+            const lr = await fetch('/rpc/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token: '{{.U.operator_token}}' })
+            });
+            if (lr.ok) location.reload();
+          } catch (e) { /* ignore */ }
+        })();
 services:
   server:
     # motrixapp/motrix-server:2.0.0-beta.19

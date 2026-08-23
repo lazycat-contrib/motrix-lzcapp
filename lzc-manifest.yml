@@ -30,8 +30,8 @@ application:
 services:
   server:
     # motrixapp/motrix-server:2.0.0-beta.19
-    # upstream: motrixapp/motrix-server:2.0.0-beta.21
-    image: registry.lazycat.cloud/czyt/motrixapp/motrix-server:a26f635bf818e0ea
+    # upstream: motrixapp/motrix-server:2.0.0-beta.22
+    image: registry.lazycat.cloud/czyt/motrixapp/motrix-server:c5571b7775fa35a9
     user: root
     environment:
       - MOTRIX_DATA_DIR=/data

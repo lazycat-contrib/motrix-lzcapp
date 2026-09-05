@@ -1,5 +1,5 @@
 package: community.lazycat.app.motrix
-version: 2.0.0-beta.30
+version: 2.0.0-beta.32
 name: Motrix
 description: "A modern download manager that supports all platforms. Built with Golang and Flutter."
 min_os_version: 1.5.0
